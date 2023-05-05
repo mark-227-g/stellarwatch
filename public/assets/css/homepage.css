@@ -1,0 +1,32 @@
+
+#eventarea{
+  background-color:lightslategrey;
+  color:white;
+}
+
+
+
+#zipcodeInput{
+width:auto;
+}
+#eventDateInput{
+  width:auto;
+  }
+
+#searchCityBtn, #clearCityBtn {
+background-color:blue;
+color:white;
+width:100%
+
+}
+#searchEventButton {
+background-color: lightgray;
+text-align: center;
+}
+#searchEventButton:hover {
+background-color:grey;
+}
+
+#astroEventList{
+  height:200px;
+}

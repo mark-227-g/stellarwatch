@@ -1,0 +1,44 @@
+  
+<div class="row">
+  <div class="row">
+    <form id="searchForm" class="container-fluid">
+      <input id="zipcodeInput"  type="text" placeholder="zipcode" /> 
+      <input id="eventDateInput" type="text" placeholder="mm/dd/yyyy" />
+      <button id="searchEventButton" type="submit" >Search</button>
+    </form>
+  </div>
+  <div class="row">
+    <div id="astroEventList" class="list-group overflow-auto col-sm-10 col-md-10 col-lg-10">
+    {{#each astroEvents as |astroEvent|}}
+
+      <div>
+        {{astroEvent.id}}
+        {{astroEvent.description}}
+      </div>
+
+    {{/each}}
+    {{#each astroEvents as |astroEvent|}}
+
+      <div>
+        {{astroEvent.id}}
+        {{astroEvent.description}}
+      </div>
+
+    {{/each}}
+    {{#each astroEvents as |astroEvent|}}
+
+      <div>
+        {{astroEvent.id}}
+        {{astroEvent.description}}
+      </div>
+
+    {{/each}}
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        <p>image</p>
+        <p>description</p>
+    </div>
+  </div>
+</div>
+
+
