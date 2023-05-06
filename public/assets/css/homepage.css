@@ -4,6 +4,17 @@
   color:white;
 }
 
+.list-group-item{
+  padding:0;
+}
+.list-group-item:hover{
+  background-color: lightblue;
+}
+.img-thumbnail{
+  width:200px;
+  height:200px;
+}
+
 
 
 #zipcodeInput{
@@ -28,5 +39,5 @@ background-color:grey;
 }
 
 #astroEventList{
-  height:200px;
+  height:500px;
 }
