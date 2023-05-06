@@ -1,0 +1,15 @@
+.nasa-image {
+  margin-bottom: 2rem;
+  text-align: center;
+  min-height: 500px;
+}
+
+.nasa-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.nasa-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
