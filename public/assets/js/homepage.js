@@ -1,25 +1,64 @@
 /************************************** 
 global variables
 **************************************/
+var savedAstroEvent = 1;
+var currentUserId = 1;
 
 
-function loadAstroEvents()
+
+function addEventHandlers()
 {
-  var astroEventListEl = document.querySelector("#astroEventList");
-  var astroEventItemEl;
-//document.getElementById("#astroEventList");
-astroEventItemEl = document.createElement("div");
-astroEventItemEl.innerHTML='<div class="astroEvent">'+
-'<p>' + "lunar eclipse" +'</p>'+
-//'<button id="btn-'+i+'" class="mealBtn col-md-4" value="'+meals[i].idMeal+'">'+
-//'<img class="mealPhoto"src="'+meals[i].strMealThumb+'" />'
-//'</button>'+
-'</div>'
-astroEventListEl.appendChild(astroEventItemEl);
-//btnEl=document.getElementById("btn-"+i);
-//btnEl.addEventListener("click",mealBtnClick);
-}
-  
+  let saveButtenE1s=document.querySelectorAll(".saveButton");
+  saveButtenE1s.forEach(element => {
+    element.addEventListener("click",saveButtonClick);
+  });
 
-//load events
-loadAstroEvents();
+  let calendarButtonE1s=document.querySelectorAll(".calendarButton");
+  calendarButtonE1s.forEach(element => {
+    element.addEventListener("click",saveButtonClick);
+  });
+  let viewButtonE1s=document.querySelectorAll(".viewButton");
+  viewButtonE1s.forEach(element => {
+    element.addEventListener("click",viewButtonClick);
+  });
+}
+
+addEventToUser(id)
+try {
+  // Get all Homepages, sorted by id
+  const astroEventData = await AstroEvent.findAll({
+    order: [['id', 'ASC']],
+  });
+
+  // Serialize Homepage data so templates can read it
+  const astroEvents = astroEventData.map((project) => project.get({ plain: true }));
+
+  // Pass serialized data into Handlebars.js template
+  res.render('homepage', { astroEvents });
+} catch (err) {
+  res.status(500).json(err);
+}
+/************************************** 
+Event handler for viewButtonClick
+**************************************/
+function viewButtonClick(event) {
+  alert("view "+event.currentTarget.value);
+  console.log(event.currentTarget);
+}
+/************************************** 
+Event handler for saveButtonClick
+**************************************/
+function saveButtonClick(event) {
+  alert("save "+event.currentTarget.value);
+  console.log(event.currentTarget);
+}
+/************************************** 
+Event handler for calendarButtonClick
+**************************************/
+function calendarButtonClick(event) {
+  alert("calendar " +event.currentTarget.value);
+  console.log(event.currentTarget);
+}
+
+
+addEventHandlers();
