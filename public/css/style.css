@@ -1,17 +1,41 @@
 .nasa-image {
   margin-bottom: 2rem;
   text-align: center;
-  min-height: 500px;
 }
 
 .nasa-image img {
   max-width: 100%;
   height: auto;
+  width: auto\9; /* IE8 and below */
+  max-width: 70%; /* Change this value to adjust the width of the image */
+  display: block;
+  margin: 0 auto;
 }
 
+
 .nasa-title {
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: normal;
   text-align: center;
-  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 576px) {
+  .nasa-title {
+    font-size: .75rem;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  .nasa-title {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .nasa-title {
+    font-size: 1.5rem;
+  }
 }
 
 .logo-image {
@@ -19,6 +43,26 @@
   height: 125px;
   margin: 25px
 }
+
+main.container {
+  padding-top: 3rem;
+}
+
+form {
+  margin: auto;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+form input,
+form button {
+  margin-bottom: 1rem;
+}
+
+form button {
+  margin-top: 1rem;
+}
+
 
 /************************************** 
 Default page styles  
@@ -46,16 +90,15 @@ font-size:x-large;
   font-family: 'Orbitron', sans-serif;
   font-weight: normal;
 }
-body{
-  padding: 10px;
-}
 /************************************** 
 Heading styles  
 **************************************/
-  header
-  {
-      background-color: whitesmoke;   
-  }
+header {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 10px;
+}
+
   #homeButton{
       text-decoration: none;
   }
@@ -68,16 +111,10 @@ Heading styles
   #logoutButton:hover{
       background-color:lightblue;
   }
-  #pageTitle{
-      font-weight: bold;
-      text-align:center;
-      vertical-align: middle;
-  }
 
-  .Orbitron {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: normal;
-    font-size: 4rem; /* Change this value to adjust the font size */
+  #pageTitle {
+    font-size: 3rem;
+    font-weight: lighter;
   }
   
 
@@ -104,12 +141,12 @@ styles
 /************************************** 
 footer styles  
 **************************************/
-footer
-  {
-  background-color: whitesmoke;
-  vertical-align: middle;
-  padding:0;
-  }
+footer {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 10px;
+}
+
 .footerText{
   font-family: 'Orbitron', sans-serif;
   font-size:smaller;
