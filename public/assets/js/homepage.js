@@ -40,6 +40,7 @@ Event handler for saveButtonClick
 function saveButtonClick(event) {
   alert("save "+event.currentTarget.value);
   console.log(event.currentTarget);
+  addUserEvent(currentUserId,event.currentTarget.value)
 }
 /************************************** 
 Event handler for calendarButtonClick
@@ -48,6 +49,24 @@ function calendarButtonClick(event) {
   alert("calendar " +event.currentTarget.value);
   console.log(event.currentTarget);
 }
+
+function addUserEvent(astroUserId,astroEventId) {
+  
+  fetch('home/addevent',{
+    method:'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({astroUserId,astroEventId})
+  })
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(data){
+      return data;
+    }
+  )
+}
+  
+  
 
 
 addEventHandlers();

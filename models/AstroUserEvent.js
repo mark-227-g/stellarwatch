@@ -1,19 +1,28 @@
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class AstroUserEvent extends Model {}
 
-AstroUserEvent.init(
+  AstroUserEvent.init(
   {
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
-    },
-    event_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+  user_id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true
+  },
+  event_id: {
+    type: DataTypes.INTEGER,
+  }
+  ,
+  created_at: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+  updated_at: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+  
   },
   {
     sequelize,
