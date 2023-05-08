@@ -1,0 +1,29 @@
+<main class="container d-flex align-items-center" style="height: 80vh;">
+  <script src="/js/nasa.js"></script>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="nasa-image mb-3"></div>
+      <h2 class="nasa-title">Welcome back!</h2>
+    </div>
+    <div class="col-md-4" style="background-color: #f7f7f7; padding: 20px;">
+  <form method="POST" action="/login" class="py-4">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" id="username" name="username" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" name="password" class="form-control" required>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Login</button>
+      <a href="/create-account" class="btn btn-secondary ml-3">Create Account</a>
+    </div>
+  </form>
+</div>
+
+  </div>
+</main>
