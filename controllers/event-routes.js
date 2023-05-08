@@ -30,3 +30,11 @@ const savedevents = [
         description: 'Description 7',
       },
     ];
+
+router.get('/', (req, res) => {
+ res.render('savedevents', { savedevents: savedevents });
+});
+    
+
+
+module.exports = router;
