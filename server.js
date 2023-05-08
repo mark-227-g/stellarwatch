@@ -7,9 +7,17 @@ const sequelize = require('./models/database');
 const routes = require('./controllers');
 const path = require('path');
 const hbs = exphbs.create({});
+const session = require('express-session');
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+app.use(session({
+    secret: 'baseball',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+  }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
