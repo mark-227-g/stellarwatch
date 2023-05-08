@@ -13,3 +13,105 @@
   text-align: center;
   margin-bottom: 2rem;
 }
+
+.logo-image {
+  width: 125px;
+  height: 125px;
+  margin: 25px
+}
+
+/************************************** 
+Default page styles  
+**************************************/
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1
+{
+text-align: center;
+font-weight: bold;  
+}
+
+h2
+{
+text-align: left;
+font-weight: bold;
+font-size:x-large;  
+}
+
+.Orbitron{
+  font-family: 'Orbitron', sans-serif;
+  font-weight: normal;
+}
+body{
+  padding: 10px;
+}
+/************************************** 
+Heading styles  
+**************************************/
+  header
+  {
+      background-color: whitesmoke;   
+  }
+  #homeButton{
+      text-decoration: none;
+  }
+  #homeButton:hover{
+      background-color:lightblue;
+  }
+  #logoutButton{
+      text-decoration: none;
+  }
+  #logoutButton:hover{
+      background-color:lightblue;
+  }
+  #pageTitle{
+      font-weight: bold;
+      text-align:center;
+      vertical-align: middle;
+  }
+
+  .Orbitron {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: normal;
+    font-size: 4rem; /* Change this value to adjust the font size */
+  }
+  
+
+/************************************** 
+Nav styles  
+**************************************/
+nav{
+  font-size:smaller;
+}
+.nav-item{
+  background-color:lightskyblue;
+}
+.nav-item:hover{
+  background-color:darkgrey
+}
+
+/************************************** 
+styles  
+**************************************/
+
+
+
+
+/************************************** 
+footer styles  
+**************************************/
+footer
+  {
+  background-color: whitesmoke;
+  vertical-align: middle;
+  padding:0;
+  }
+.footerText{
+  font-family: 'Orbitron', sans-serif;
+  font-size:smaller;
+
+}
