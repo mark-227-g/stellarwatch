@@ -3,11 +3,13 @@ const app = express();
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const db = require('./models/models');
-const sequelize = require('./models/database');
 const routes = require('./controllers');
 const path = require('path');
-const hbs = exphbs.create({});
 const session = require('express-session');
+const hbs = exphbs.create({ helpers });
+const helpers = require('./utils/helpers');
+const sequelize = require('./config/connection');
+const PORT = process.env.PORT || 3001;
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -26,8 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync()
-	.then(() => {
-		app.listen(3000, () => console.log('Server listening on port 3000'));
-	})
-	.catch(error => console.error(error));
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+})
+.catch(error => console.error(error));

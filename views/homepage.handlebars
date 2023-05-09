@@ -1,0 +1,41 @@
+  
+<div class="row">
+  <div class="row">
+    <form id="searchForm" class="container-fluid">
+      <input id="zipcodeInput"  type="text" placeholder="zipcode" /> 
+      <input id="eventDateInput" type="text" placeholder="mm/dd/yyyy" />
+      <button id="searchEventButton" type="submit" >Search</button>
+    </form>
+  </div>
+  <div class="row">
+   <div  class="list-group overflow-auto col-sm-7 col-md-7 col-lg-7">
+      <ul id="astroEventList" class="list-group">
+      <!--  loop through astroEvents and create list time.
+            The list item has buttons for view, save, ical
+      -->
+      {{#each astroEvents as |astroEvent|}}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span class="astroEvent" width="100%">{{astroEvent.description}}</span>
+          <span class="float-right">
+            <button class="viewButton" value="{{astroEvent.id}}"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="saveButton" value="{{astroEvent.id}}"><i class="fa-solid fa-floppy-disk"></i></button>
+            <button class="calendarButton" value="{{astroEvent.id}}"><i class="fa-solid fa-calendar-plus"></i></button>
+          </span>
+        </li>
+      {{/each}}
+      </ul>
+    </div>
+    <!--  show thumbnail image of event and description -->
+    <div class="col-sm-5 col-md-5 col-lg-5">
+        <p><img class="img-thumbnail" src="https://apod.nasa.gov/apod/image/2305/shackleton_arrow.png" alt="space image"></p>
+        <p>description</p>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Included Scripts -->
+    <script src="./assets/js/homepage.js"></script>
+
+
+

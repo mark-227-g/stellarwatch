@@ -1,0 +1,20 @@
+<div class="menu-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      Users
+    </h2>
+  </div>
+  {{#each astroUsers as |astroUser|}}
+  <div class="dish col-md-4">
+    <p>
+      {{astroUser.id}}
+      {{astroUser.username}}
+      {{astroUser.name}}
+      {{astroUser.zipcode}}
+      {{astroUser.email}}
+    </p>
+  </div>
+  {{/each}}
+</div>
+
+
