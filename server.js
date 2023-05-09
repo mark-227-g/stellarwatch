@@ -6,8 +6,8 @@ const db = require('./models/models');
 const routes = require('./controllers');
 const path = require('path');
 const session = require('express-session');
-const hbs = exphbs.create({ helpers });
 const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 const sequelize = require('./config/connection');
 const PORT = process.env.PORT || 3001;
 
@@ -27,7 +27,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-app.use(require('./controllers/event-routes'));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
