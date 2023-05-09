@@ -1,24 +1,25 @@
 <main class="container d-flex align-items-center" style="height: 80vh;">
   <div class="row">
     <div class="col-md-8">
-    <div id="nasa-image" class="nasa-image mb-3"></div>
+      <div id="nasa-image" class="nasa-image mb-3"></div>
       <h2 class="nasa-title">Welcome back!</h2>
+      <div class="nasa-description"></div>
     </div>
     <div class="col-md-4" style="background-color: #f7f7f7; padding: 20px;">
       <form method="POST" action="/login" class="py-4">
-  <div class="mb-3">
-    <label for="username" class="form-label">Username:</label>
-    <input type="text" id="username" name="username" class="form-control" required>
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password:</label>
-    <input type="password" id="password" name="password" class="form-control" required>
-  </div>
-  <div class="text-center">
-    <button type="submit" class="btn btn-primary me-2">Login</button>
-    <a href="/create-account" class="btn btn-secondary">Create Account</a>
-  </div>
-</form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary me-2">Login</button>
+          <a href="/create-account" class="btn btn-secondary">Create Account</a>
+        </div>
+      </form>
     </div>
   </div>
 </main>

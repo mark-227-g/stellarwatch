@@ -1,55 +1,50 @@
-<div class="container my-5">
+<div class="container-fluid my-5">
   <div class="row align-items-center">
-    <div class="col-md-9">
-      <h1 class="mb-0" style="font-size: 3rem;">Create an Account</h1>
+    <div class="col-md-8 mb-4 mb-md-0" style="padding-right: 50px;">
+      <img src="/images/astronomy.jpg" alt="Astronomy Image" class="img-fluid" style="max-width: 100%;">
     </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-4">
+      <h1 class="mb-0" style="font-size: 2.5rem;">Create an Account</h1>
       <form id="create-account-form" method="POST" action="/create-account" style="background-color: #f7f7f7; padding: 20px;">
         <div class="mb-3">
-          <label for="username" class="form-label" style="font-weight: lighter;">Username:</label>
-          <input type="text" id="username" name="username" class="form-control" style="padding: 10px;" required>
+          <label for="username" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold;">Username:</label>
+          <input type="text" id="username" name="username" class="form-control" style="padding: 10px; font-family: 'Roboto', sans-serif; font-size: 1rem;" required>
         </div>
 
         <div class="mb-3">
-          <label for="name" class="form-label" style="font-weight: lighter;">Name:</label>
-          <input type="text" id="name" name="name" class="form-control" style="padding: 10px;" required>
+          <label for="name" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold;">Name:</label>
+          <input type="text" id="name" name="name" class="form-control" style="padding: 10px; font-family: 'Roboto', sans-serif; font-size: 1rem;" required>
         </div>
 
         <div class="mb-3">
-          <label for="zipcode" class="form-label" style="font-weight: lighter;">Zip Code:</label>
-          <input type="text" id="zipcode" name="zipcode" class="form-control" style="padding: 10px;" required>
+          <label for="zipcode" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold;">Zip Code:</label>
+          <input type="text" id="zipcode" name="zipcode" class="form-control" style="padding: 10px; font-family: 'Roboto', sans-serif; font-size: 1rem;" required>
         </div>
 
         <div class="mb-3">
-          <label for="email" class="form-label" style="font-weight: lighter;">Email:</label>
-          <input type="email" id="email" name="email" class="form-control" style="padding: 10px;" required>
+          <label for="email" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold;">Email:</label>
+          <input type="email" id="email" name="email" class="form-control" style="padding: 10px; font-family: 'Roboto', sans-serif; font-size: 1rem;" required>
         </div>
 
         <div class="mb-3">
-          <label for="password" class="form-label" style="font-weight: lighter;">Password:</label>
-          <input type="password" id="password" name="password" class="form-control" style="padding: 10px;" required>
+          <label for="password" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold;">Password:</label>
+          <input type="password" id="password" name="password" class="form-control" style="padding: 10px; font-family: 'Roboto', sans-serif; font-size: 1rem;" required>
         </div>
 
         <div class="mb-3">
-          <label for="confirm-password" class="form-label" style="font-weight: lighter;">Confirm Password:</label>
-          <input type="password" id="confirm-password" name="confirm-password" class="form-control" style="padding: 10px;" required>
+          <label for="confirm-password" class="form-label" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold;">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" class="form-control" style="padding: 10px; font-family: 'Roboto', sans-serif; font-size: 1rem;" required>
         </div>
 
         <div class="text-center">
           <button type="submit" id="create-account-button" class="btn btn-primary" style="background-color: #1b1b1b;">Create Account</button>
         </div>
       </form>
-    </div>
-  </div>
-
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-6 text-center">
-      <a href="/login">Already have an account? Login</a>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6 text-center">
+          <a href="/login">Already have an account? Login</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
