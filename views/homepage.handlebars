@@ -9,17 +9,17 @@
   </div>
   <div class="row">
    <div  class="list-group overflow-auto col-sm-7 col-md-7 col-lg-7">
-      <ul id="astroEventList" class="list-group">
-      <!--  loop through astroEvents and create list time.
+      <ul id="stellarEventList" class="list-group">
+      <!--  loop through stellarEvents and create list time.
             The list item has buttons for view, save, ical
       -->
-      {{#each astroEvents as |astroEvent|}}
+      {{#each stellarEvents as |stellarEvent|}}
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <span class="astroEvent" width="100%">{{astroEvent.description}}</span>
+          <span class="stellarEvent" width="100%">{{stellarEvent.description}}</span>
           <span class="float-right">
-            <button class="viewButton" value="{{astroEvent.id}}"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="saveButton" value="{{astroEvent.id}}"><i class="fa-solid fa-floppy-disk"></i></button>
-            <button class="calendarButton" value="{{astroEvent.id}}"><i class="fa-solid fa-calendar-plus"></i></button>
+            <button class="viewButton" value="{{stellarEvent.id}}"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="saveButton" value="{{stellarEvent.id}}"><i class="fa-solid fa-floppy-disk"></i></button>
+            <button class="calendarButton" value="{{stellarEvent.id}}"><i class="fa-solid fa-calendar-plus"></i></button>
           </span>
         </li>
       {{/each}}

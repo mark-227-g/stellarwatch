@@ -1,7 +1,7 @@
 /************************************** 
 global variables
 **************************************/
-var savedAstroEvent = 1;
+var savedstellarEvent = 1;
 var currentUserId = 1;
 
 
@@ -50,12 +50,12 @@ function calendarButtonClick(event) {
   console.log(event.currentTarget);
 }
 
-function addUserEvent(astroUserId,astroEventId) {
+function addUserEvent(stellarUserId,stellarEventId) {
   
   fetch('home/addevent',{
     method:'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({astroUserId,astroEventId})
+    body: JSON.stringify({stellarUserId,stellarEventId})
   })
     .then(function(response){
       return response.json();

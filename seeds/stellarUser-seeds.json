@@ -4,20 +4,20 @@
         "password":"xyz",
         "name":"Mark",
         "zipcode":"07028",
-        "email":"Mark@astro"
+        "email":"Mark@stellar"
     },
     {
         "username":"mars",
         "password":"xyz",
         "name":"Zach",
         "zipcode":"07028",
-        "email":"Zach@astro"
+        "email":"Zach@stellar"
     },
     {
         "username":"pluto",
         "password":"xyz",
         "name":"Damil",
         "zipcode":"07028",
-        "email":"Damil@astro"
+        "email":"Damil@stellar"
     }
 ]

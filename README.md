@@ -1,2 +1,2 @@
-# astroapp
-Astronomy App
+# stellarapp
+Stellar App
