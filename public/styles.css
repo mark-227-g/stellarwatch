@@ -1,0 +1,58 @@
+/* Reset some default styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Style the header */
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 1em;
+}
+
+/* Style the navigation bar */
+nav {
+	background-color: #ddd;
+	padding: 1em;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+}
+
+nav li {
+	margin-right: 1em;
+}
+
+nav a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+	transition: color 0.2s;
+}
+
+nav a:hover {
+	color: #666;
+}
+
+/* Style the main section */
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+article {
+	margin-bottom: 2em;
+}
+
+h2 {
+	margin-bottom: 0.5em;
+}
+
+p {
+	line-height: 1.5;
+}
