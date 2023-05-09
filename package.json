@@ -1,11 +1,11 @@
 {
-  "name": "Stellar",
+  "name": "stellar",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
-    "seeds": "node seeds/index.js
+    "start": "node server.js",
+    "seeds": "node seeds/index.js",
   },
   "author": "",
   "license": "ISC",
