@@ -1,10 +1,9 @@
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class AstroUserEvent extends Model {}
+class stellarUserEvent extends Model {}
 
-  AstroUserEvent.init(
+  stellarUserEvent.init(
   {
   user_id: {
     type: DataTypes.INTEGER,
@@ -28,8 +27,8 @@ class AstroUserEvent extends Model {}
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'AstroUserEvent',
+    modelName: 'stellarUserEvent',
   }
 );
 
-module.exports = AstroUserEvent;
+module.exports = stellarUserEvent;

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class AstroUser extends Model {}
+class stellarEvent extends Model {}
 
-AstroUser.init(
+stellarEvent.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,33 +11,33 @@ AstroUser.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    datetime: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
-    name: {
+    info: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    zipcode: {
+    photo: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      }
+    location: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'AstroUser',
+    modelName: 'stellarEvent',
   }
 );
 
-module.exports = AstroUser;
+module.exports = stellarEvent;
