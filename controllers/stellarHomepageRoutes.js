@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const { AstroEvent}  = require('../models');
-const {AstroUserEvent}  = require('../models');
+const { stellarEvent}  = require('../models');
+const {stellarUserEvent}  = require('../models');
 
 router.get('/home', async (req, res) => {
   try {
     // Get all Homepages, sorted by id
-    const astroEventData = await AstroEvent.findAll({
+    const stellarEventData = await stellarEvent.findAll({
       order: [['id', 'ASC']],
     });
 
     // Serialize Homepage data so templates can read it
-    const astroEvents = astroEventData.map((project) => project.get({ plain: true }));
+    const stellarEvents = stellarEventData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data into Handlebars.js template
-    res.render('homepage', { astroEvents });
+    res.render('homepage', { stellarEvents });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -21,15 +21,15 @@ router.get('/home', async (req, res) => {
 
 router.post('/home/addevent', async(req,res) => 
 {
-    const {astroUserId,astroEventId}=req.body;
-    console.log(astroUserId + "  " + astroEventId);
+    const {stellarUserId,stellarEventId}=req.body;
+    console.log(stellarUserId + "  " + stellarEventId);
     const newdate=new Date();
-    console.log(astroUserId+" : "+astroEventId);
+    console.log(stellarUserId+" : "+stellarEventId);
     console.log(req.body);
     try {
-      const [user_id, event_id,created_at,updated_at]= await AstroUserEvent.findOrCreate({
-        where: {user_id:astroUserId,
-                event_id:astroEventId ,
+      const [user_id, event_id,created_at,updated_at]= await stellarUserEvent.findOrCreate({
+        where: {user_id:stellarUserId,
+                event_id:stellarEventId ,
                 created_at:newdate,
               updated_at:newdate 
             },
