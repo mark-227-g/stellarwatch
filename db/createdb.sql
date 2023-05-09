@@ -1,28 +1,27 @@
-DROP TABLE IF EXISTS AstroUser;
-DROP TABLE IF EXISTS AstroEvent;
-DROP TABLE IF EXISTS astroUserEvent;
+DROP TABLE IF EXISTS stellarUser;
+DROP TABLE IF EXISTS stellarEvent;
+DROP TABLE IF EXISTS stellarUserEvent;
 
-CREATE TABLE AstroUser (
+CREATE TABLE stellarUser (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  username VARCHAR(50),
-  password  VARCHAR(50),
-  name  VARCHAR(50),
-  zipcode  VARCHAR(50),
-  email  VARCHAR(50)
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(50) NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  zipcode VARCHAR(10) NOT NULL,
+  email VARCHAR(50) NOT NULL UNIQUE
 );
 
 
-CREATE TABLE AstroEvent (
+ CREATE TABLE stellarEvent (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   description VARCHAR(50),
-  datetime datetime,
+  eventDateTime datetime,
   info VARCHAR(50) NOT NULL,
   photo VARCHAR(50) NOT NULL,
   location VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE AstroUserEvent (
+CREATE TABLE stellarUserEvent (
   id INTEGER,
   event INTEGER 
 );
-alter table AstroUserEvent drop primary key;

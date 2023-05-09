@@ -1,22 +1,22 @@
 const sequelize = require('../config/connection');
-const AstroUser = require('../models/AstroUser');
-const AstroEvent = require('../models/AstroEvent');
-const AstroUserEvent = require('../models/AstroUserEvent');
-const astroUserData = require('./astroUser-seeds.json');
-const astroEventData = require('./astroEvent-seeds.json');
-const astroUserEventData = require('./astroUserEvent-seeds.json');
+const stellarUser = require('../models/stellarUser');
+const stellarEvent = require('../models/stellarEvent');
+const stellarUserEvent = require('../models/stellarUserEvent');
+const stellarUserData = require('./stellarUser-seeds.json');
+const stellarEventData = require('./stellarEvent-seeds.json');
+const stellarUserEventData = require('./stellarUserEvent-seeds.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await AstroUser.bulkCreate(astroUserData, {
+  await stellarUser.bulkCreate(stellarUserData, {
     individualHooks: true,
     returning: true,
   });
-  await AstroEvent.bulkCreate(astroEventData, {
+  await stellarEvent.bulkCreate(stellarEventData, {
     individualHooks: true,
     returning: true,
   });
-  await AstroUserEvent.bulkCreate(astroUserEventData, {
+  await stellarUserEvent.bulkCreate(stellarUserEventData, {
     individualHooks: true,
     returning: true,
   });
