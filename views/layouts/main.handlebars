@@ -25,37 +25,41 @@
 
 <body>
   <header class="navbar container-fluid sticky-top px-0">
-    <a id="homeButton" href="/">
-      <img class="logo-image" src="/images/logo.png" alt="home" />
-    </a>
-    <h1 id="pageTitle" class="Orbitron">StellarWatch</h1>
-    <a id="logoutButton">
-      <i class="fa-solid fa-arrow-right-from-bracket fa-lg" alt="logout"></i>
-    </a>
+    <div class="container d-flex justify-content-center align-items-center">
+      <a id="homeButton" href="/">
+        <img class="logo-image" src="/images/logo.png" alt="home" />
+      </a>
+      <h1 id="pageTitle" class="Orbitron">StellarWatch</h1>
+    </div>
   </header>
 
+  <div class="container">
   <div class="row">
     <main class="col-sm-12">
       <div class="">
-   {{{ body }}}
+        {{{ body }}}
       </div>
     </main>
   </div>
+</div>
 
-  <footer class="navbar navbar-fixed-bottom container-fluid">
-    <h3 class="Orbitron footerText">Copyright info</h3>
-    <h3 class="Orbitron footerText">Event data provided by NASA</h3>
+
+  <footer class="navbar navbar-fixed-bottom container-fluid" style="background-color: #1b1b1b;">
+    <div class="container d-flex justify-content-center align-items-center">
+      <h3 class="Orbitron footerText" style="color: #fff;">Copyright info</h3>
+      <h3 class="Orbitron footerText" style="color: #fff;">Event data provided by NASA</h3>
+    </div>
   </footer>
 
-<!-- Include Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <!-- Include Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-<!-- Include Fontawesome Scripts -->
-<script src="https://kit.fontawesome.com/af95bfed77.js" crossorigin="anonymous"></script>
+  <!-- Include Fontawesome Scripts -->
+  <script src="https://kit.fontawesome.com/af95bfed77.js" crossorigin="anonymous"></script>
 
-<!-- Added link to the jQuery library -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Added link to the jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
 
 </html>
