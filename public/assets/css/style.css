@@ -1,89 +1,217 @@
-/************************************** 
-Default page styles  
+/**************************************
+Default page styles
 **************************************/
 
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
   }
-  
-  h1
-  {
+
+  h1 {
   text-align: center;
-  font-weight: bold;  
+  font-weight: bold;
   }
   
-  h2
-  {
+  h2 {
   text-align: left;
   font-weight: bold;
-  font-size:x-large;  
+  font-size: x-large;
   }
   
-  .Orbitron{
-    font-family: 'Orbitron', sans-serif;
-    font-weight: normal;
+  .Orbitron {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: normal;
   }
-  body{
+  
+  body {
+  padding: 10px;
+  }
+  
+  /**************************************
+  Heading styles
+  **************************************/
+  
+  header {
+    background-color: #1f1e1e;
+    color: #fff;
     padding: 10px;
-  }
-/************************************** 
-Heading styles  
-**************************************/
-    header
-    {
-        background-color: whitesmoke;   
     }
-    #homeButton{
-        text-decoration: none;
+    
+    #homeButton {
+    text-decoration: none;
     }
-    #homeButton:hover{
-        background-color:lightblue;
+    
+    #homeButton:hover {
+    background-color: lightblue;
     }
-    #logoutButton{
-        text-decoration: none;
+    
+    #logoutButton {
+    text-decoration: none;
     }
-    #logoutButton:hover{
-        background-color:lightblue;
+    
+    #logoutButton:hover {
+    background-color: lightblue;
     }
-    #pageTitle{
-        font-weight: bold;
-        font-size:large;
-        text-align:center;
-        vertical-align: middle;
-    }
-
-/************************************** 
-Nav styles  
-**************************************/
-  nav{
-    font-size:smaller;
-  }
-  .nav-item{
-    background-color:lightskyblue;
-  }
-  .nav-item:hover{
-    background-color:darkgrey
-  }
-
-/************************************** 
- styles  
-**************************************/
-
-
-
-
-/************************************** 
-footer styles  
-**************************************/
-footer
-    {
-    background-color: whitesmoke;
+    
+    #pageTitle {
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
     vertical-align: middle;
-    padding:0;
     }
-  .footerText{
-    font-family: 'Orbitron', sans-serif;
-    font-size:smaller;
+  
+  /**************************************
+  Nav styles
+  **************************************/
+  
+  nav {
+  font-size: smaller;
+  }
+  
+  .nav-item {
+  background-color: lightskyblue;
+  }
+  
+  .nav-item:hover {
+  background-color: darkgrey;
+  }
+  
+  /**************************************
+  Styles
+  **************************************/
+  
+  .nasa-image {
+    margin-bottom: 2rem;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  .nasa-image img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* IE8 and below */
+    max-width: 70%; /* Change this value to adjust the width of the image */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  .nasa-title {
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: normal;
+  text-align: center;
+  }
+  
+  @media screen and (max-width: 576px) {
+  .nasa-title {
+  font-size: .75rem;
+  }
+  }
+  
+  @media screen and (min-width: 577px) and (max-width: 992px) {
+  .nasa-title {
+  font-size: 1rem;
+  }
+  }
+  
+  @media screen and (min-width: 993px) {
+  .nasa-title {
+  font-size: 1.5rem;
+  }
+  }
+  
+  .logo-image {
+  width: 125px;
+  height: 125px;
+  margin: 25px
+  }
+  
+  main.container {
+  padding-top: 3rem;
+  }
 
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  form {
+    margin: auto;
+    max-width: 400px;
+    padding: 1rem;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+  }
+  
+  form label {
+    font-size: 1.2rem;
+  }
+  
+  form input,
+  form button {
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  form input:focus,
+  form button:focus {
+    outline: none;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  form button {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  form button:hover {
+    background-color: #0069d9;
+  }
+
+  .btn-primary {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .btn-secondary {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  form button:first-of-type {
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  
+  
+  /**************************************
+  Footer styles
+  **************************************/
+  
+  footer {
+    background-color: #1f1e1e;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footerText {
+    font-family: 'Orbitron', sans-serif;
+    font-size: smaller;
+    padding: 10px
   }
