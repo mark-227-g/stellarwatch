@@ -1,18 +1,35 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
-const path = require('path');
-const hbs = exphbs.create({});
-
 const app = express();
+const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
+const db = require('./models/models');
+const routes = require('./controllers');
+const path = require('path');
+const session = require('express-session');
+const hbs = exphbs.create({ helpers });
+const helpers = require('./utils/helpers');
+const sequelize = require('./config/connection');
 const PORT = process.env.PORT || 3001;
-
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(session({
+    secret: 'baseball',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+  }));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
 app.use(require('./controllers/event-routes'));
 
-app.listen(PORT, () => {
-  console.log('Server listening on: http://localhost:' + PORT);
-});
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+})
+.catch(error => console.error(error));

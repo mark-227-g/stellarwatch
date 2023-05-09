@@ -1,25 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>My Saved AstroEvents</title>
-	<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StellarWatch</title>
+   <!-- Include bootstrap -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+  <!-- Include google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Include jQuery -->
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+  <link rel="stylesheet" href="./assets/css/jass.css" />
+
+<script src="https://kit.fontawesome.com/af95bfed77.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+
 </head>
+
 <body>
-	<header>
-		<h1>My Saved AstroEvents</h1>
-	</header>
+<header class="navbar container-fluid sticky-top px-0">
+    <a id="homeButton" href="/"> <img class="logo-image" src="/images/logo.png" alt="home" /></a>
+        <h1 id="pageTitle" class="Orbitron" >StellarWatch</h1>
+        <a id="logoutButton"><i class="fa-solid fa-arrow-right-from-bracket fa-lg" alt="logout"></i></a>
+  </header>
 
-	<nav>
-		<ul>
-			<li><a href="#">Homepage</a></li>
-			<li><a href="#">Saved Events</a></li>
-			<li><a href="#">Local Events</a></li>
-		</ul>
-	</nav>
+  {{{ body }}}
 
-	
+  <div class="row">
+  <nav class="navbar navbar-light bg-lignt navbar-default col-sm-2">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Find Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">My Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Random Fact</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="col-sm-10">
+    <div class="">
+      {{{body}}}
+    </div>
+  </main>
+  </div>
+  <footer class="navbar navbar-fixed-bottom container-fluid">
+      <h3 class="Orbitron footerText">copyright info</h3>
 
-	<script src="script.js"></script>
+      <h3 class="Orbitron footerText">Event data provided by NASA</h3>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <!-- Include fontawsome Scripts -->
+  https://fontawesome.com/icons/telescope?f=classic&s=thin
+  <script src="https://kit.fontawesome.com/af95bfed77.js" crossorigin="anonymous"></script>
+  <!-- Added link to the jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
 </html>

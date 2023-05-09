@@ -1,0 +1,23 @@
+[
+    {
+        "username":"pluto",
+        "password":"xyz",
+        "name":"Mark",
+        "zipcode":"07028",
+        "email":"Mark@astro"
+    },
+    {
+        "username":"mars",
+        "password":"xyz",
+        "name":"Zach",
+        "zipcode":"07028",
+        "email":"Zach@astro"
+    },
+    {
+        "username":"pluto",
+        "password":"xyz",
+        "name":"Damil",
+        "zipcode":"07028",
+        "email":"Damil@astro"
+    }
+]

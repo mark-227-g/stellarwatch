@@ -1,3 +1,4 @@
-DROP DATABASE IF EXISTS savedevents_db;
+DROP DATABASE IF EXISTS stellar;
 
-CREATE DATABASE savedevents_db;
+CREATE DATABASE stellar;
+
