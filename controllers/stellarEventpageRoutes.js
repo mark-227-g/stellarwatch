@@ -2,24 +2,24 @@ const router = require('express').Router();
 const { stellarEvent}  = require('../models');
 const {stellarUserEvent}  = require('../models');
 
-router.get('/home', async (req, res) => {
+router.get('/event', async (req, res) => {
   try {
-    // Get all Homepages, sorted by id
+    // Get all events sorted by id
     const stellarEventData = await stellarEvent.findAll({
       order: [['id', 'ASC']],
     });
 
-    // Serialize Homepage data so templates can read it
+    // Serialize eventpage data so templates can read it
     const stellarEvents = stellarEventData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data into Handlebars.js template
-    res.render('homepage', { stellarEvents });
+    res.render('eventpage', { stellarEvents });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.post('/home/addevent', async(req,res) => 
+router.post('/event/addevent', async(req,res) => 
 {
     const {stellarUserId,stellarEventId}=req.body;
     console.log(stellarUserId + "  " + stellarEventId);

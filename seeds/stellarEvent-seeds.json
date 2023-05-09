@@ -1,37 +1,121 @@
 [
     {
-    "description":"Lunar Eclipse",
+    "description":"After Sunset Planet Parade",
     "eventDateTime":"2023-11-01",
-    "info":"this is the info",
-    "photo": "this is the photo",
+    "info":"Look up tonight and see a whole bunch of planets. Just after sunset, looking west, planets Venus, Saturn, Jupiter and Mars will all be simultaneously visible. ",
+    "photo": "https://apod.nasa.gov/apod/image/2301/AllPlanets_Tezel_1680_annotated.jpg",
     "location":"this is the location"
     },
     {
-        "description":"Lunar Eclipse",
-        "eventDateTime":"2023-11-01",
-        "info":"this is the info",
-        "photo": "this is the photo",
+        "description":"Kemble’s Cascade of Stars",
+        "eventDateTime":"2023-11-02",
+        "info":"This line of stars is real. A little too faint to see with the unaided eye, Kemble’s Cascade of stars inspires awe when seen with binoculars.",
+        "photo": "https://apod.nasa.gov/apod/image/2301/KembleCascade_Lease_3668.jpg",
         "location":"this is the location"
         },
         {
-            "description":"Solar Eclipse",
-            "eventDateTime":"2023-11-01",
-            "info":"this is the info",
-            "photo": "this is the photo",
+            "description":"CG4: The Globule and the Galaxy",
+            "eventDateTime":"2023-11-03",
+            "info":"Can a gas cloud eat a galaxy? It's not even close. The 'claw' of this odd looking 'creature' in the featured photo is a gas cloud known as a cometary globule.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/cg4_selby_5430.jpg",
             "location":"this is the location"
         },
         {
-            "description":"Perseid Meteor Shower",
-            "eventDateTime":"2023-11-01",
-            "info":"this is the info",
-            "photo": "this is the photo",
+            "description":"Messier 45: The Daughters of Atlas and Pleione",
+            "eventDateTime":"2023-11-04",
+            "info":"Hurtling through a cosmic dust cloud a mere 400 light-years away, the lovely Pleiades or Seven Sisters open star cluster is well-known for its striking blue reflection nebulae.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/M_45_Plejarden_Stefan_Thrun_klein4096.jpg",
             "location":"this is the location"
         },
         {
-            "description":"Comet",
+            "description":"Space Stations in Low Earth Orbit",
+            "eventDateTime":"2023-11-05",
+            "info":"Two space stations already illuminated by sunlight in low Earth orbit crossed this dark predawn sky.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/ISS_TIANHE_FINAL_4_APOD1024.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"Tails of Comet ZTF",
+            "eventDateTime":"2023-11-06",
+            "info":"Comet ZTF may become visible to the unaided eye.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/CometZtf_Hernandez_1395.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"NGC 2264: The Cone Nebula",
+            "eventDateTime":"2023-11-06",
+            "info":"Stars are forming in the gigantic dust pillar called the Cone Nebula.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/ConeNebula_Dieterich_1370.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"Spiral Aurora over Iceland",
+            "eventDateTime":"2023-11-08",
+            "info":"The scene may look like a fantasy, but it's really Iceland. ",
+            "photo": "https://apod.nasa.gov/apod/image/2301/RockyArchAurora_Pellegrini_1330.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"Stardust in Perseus",
+            "eventDateTime":"2023-11-11",
+            "info":"This cosmic expanse of dust, gas, and stars covers some 6 degrees on the sky in the heroic constellation Perseus.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/ic348-ngc1333.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"Young Star Cluster NGC 346",
             "eventDateTime":"2023-11-01",
-            "info":"this is the info",
-            "photo": "this is the photo",
+            "info":"The most massive young star cluster in the Small Magellanic Cloud is NGC 346, embedded in our small satellite galaxy's largest star forming region some 210,000 light-years distant.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/jwst-ngc346.png",
+            "location":"this is the location"
+        },
+        {
+            "description":"LDN 1622: The Boogeyman Nebula",
+            "eventDateTime":"2023-11-01",
+            "info":"Lynds' Dark Nebula (LDN) 1622 appears against a faint background of glowing hydrogen gas only visible in long telescopic exposures of the region",
+            "photo": "https://apod.nasa.gov/apod/image/2301/LDN1622_Carter_2888.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"The Colliding Spiral Galaxies of Arp 274",
+            "eventDateTime":"2023-11-14",
+            "info":"Two galaxies are squaring off in Virgo",
+            "photo": "https://apod.nasa.gov/apod/image/2301/Arp274_HubbleOzsarac_2386.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"M1: The Crab Nebula",
+            "eventDateTime":"2023-11-15",
+            "info":"This is the mess that is left when a star explodes.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/CrabNebula_Hubble_3864.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"the Andromeda Galaxy",
+            "eventDateTime":"2023-11-17",
+            "info":"Why are there oxygen-emitting arcs near the direction of the Andromeda galaxy? No one is sure.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/M31OiiiArc_Strottner_5000.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"MACS0647: Gravitational Lensing of the Early Universe",
+            "eventDateTime":"2023-11-01",
+            "info":"galaxy cluster MACS0647",
+            "photo": "https://apod.nasa.gov/apod/image/2301/MacsClusterLens_Webb_2000.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"The Seagull Nebula",
+            "eventDateTime":"2023-11-01",
+            "info":"A broad expanse of glowing gas and dust presents a bird-like visage",
+            "photo": "https://apod.nasa.gov/apod/image/2301/crtastro_0172_2194p.jpg",
+            "location":"this is the location"
+        },
+        {
+            "description":"Galaxy Wars: M81 and M82",
+            "eventDateTime":"2023-11-01",
+            "info":"The two dominant galaxies near center are far far away, 12 million light-years distant toward the northern constellation of the Great Bear.",
+            "photo": "https://apod.nasa.gov/apod/image/2301/AUFSCHNAITER_Andreas_APOD_Bode_Cigare2048.jpg",
             "location":"this is the location"
         }
 ]
