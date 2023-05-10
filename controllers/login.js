@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
 		  req.session.user = user;
   
 		  // Redirect to the dashboard page
-		  res.redirect('/home');
+		  res.redirect('/event');
 		} else {
 		  // Return an error message if authentication fails
 		  res.send('<script>alert("Invalid username or password"); window.location="/login";</script>'); // show a browser alert and redirect to the login page
