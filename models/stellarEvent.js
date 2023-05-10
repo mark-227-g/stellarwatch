@@ -15,7 +15,7 @@ stellarEvent.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    datetime: {
+    eventdatetime: {
       type: DataTypes.DATE,
       allowNull: true,
     },

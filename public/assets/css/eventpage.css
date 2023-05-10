@@ -12,7 +12,9 @@
 }
 
 .list-group {
-  color:purple;
+  color: purple;
+  margin-top: 20px;
+  padding-top: 10px;
 }
 
 #stellarEventPhoto{
@@ -43,15 +45,51 @@ background-color:grey;
 #stellarEventList{
   height:500px;
 }
+
 #detailPhoto{
-  width:100%;
-  height:200px;
-}
-#detailInfo{
-margin:3px;
+  max-width: 350px;
+  max-height: auto;
+  margin: 10px auto;
+  display: block;
 }
 
-#detailArea{
-border:2px solid black;
-padding:0px;
+#detailInfo{
+margin: 10px auto;
+text-align: center;
+}
+
+#detailArea {
+  border: none;
+  text-align: center;
+  padding: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#detailArea img {
+  border: none;
+}
+
+.list-group-item img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+#searchForm {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0069d9;
 }

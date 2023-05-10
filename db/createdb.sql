@@ -15,7 +15,7 @@ CREATE TABLE stellarEvent (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   user_id INTEGER,
   description VARCHAR(50),
-  datetime datetime,
+  eventdatetime DATETIME,
   info VARCHAR(50) NOT NULL,
   photo VARCHAR(50) NOT NULL,
   location VARCHAR(50) NOT NULL,
