@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-const db = require('./models/models');
 const routes = require('./controllers');
 const path = require('path');
 const session = require('express-session');

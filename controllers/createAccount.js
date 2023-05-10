@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { sequelize } = require('../models/models');
-const { Op } = require('sequelize');
-const User = require('../models/models');
+const { sequelize } = require('../models/index');
+const { Op, Sequelize } = require('sequelize');
+const stellarUser = require('../models/stellarUser');
 
 // Route to render the create account page
 router.get('/', (req, res) => {
@@ -16,26 +16,25 @@ router.post('/', (req, res) => {
   console.log(`Username: ${username}, Email: ${email}, Password: ${password}, Zipcode: ${zipcode}, Name: ${name}`);
 
   // Check if username and email are unique
-  console.log('LOGGING SQL QUERY' + User.findOne({ where: { [Op.or]: [{username: username}, {email: email}] } }).toString());
-  User.findOne({ where: { [Op.or]: [{username: sequelize.escape(username)}, {email: sequelize.escape(email)}] } })
+  stellarUser.findOne({ where: { [Op.or]: [{ username }, { email }] } })
   .then(user => {
     console.log(`User: ${JSON.stringify(user)}`);
 
     if (user) {
       if (user.username === username) {
         console.log('Username already taken');
-        res.status(409).json({ message: 'Username already taken' });
+        res.send('<script>alert("Username already taken"); window.location="/create-account";</script>'); // show a browser alert and redirect to the create account page
       } else {
         console.log('Email already registered');
-        res.status(409).json({ message: 'Email already registered' });
+        res.send('<script>alert("Email already registered"); window.location="/create-account";</script>'); // show a browser alert and redirect to the create account page
       }
     } else {
       // Create new user in database
-      console.log('Before User.create');
-      User.create({ username, email, password, zipcode, name })
+      console.log('Before stellarUser.create');
+      stellarUser.create({ username, email, password, zipcode, name })
         .then(() => {
           console.log('User created');
-          res.json({ success: true });
+          res.redirect('/login'); // redirect to the login page
         })
         .catch(error => {
           console.error(error);
