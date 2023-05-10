@@ -98,9 +98,9 @@
             "location":"this is the location"
         },
         {
-            "description":"MACS0647: Gravitational Lensing of the Early Universe",
+            "description":"galaxy cluster MACS0647",
             "eventDateTime":"2023-11-01",
-            "info":"galaxy cluster MACS0647",
+            "info":"MACS0647: Gravitational Lensing of the Early Universe",
             "photo": "https://apod.nasa.gov/apod/image/2301/MacsClusterLens_Webb_2000.jpg",
             "location":"this is the location"
         },

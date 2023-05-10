@@ -5,11 +5,11 @@ class stellarUserEvent extends Model {}
 
   stellarUserEvent.init(
   {
-  user_id: {
+  id: {
     type: DataTypes.INTEGER,
     primaryKey: true
   },
-  event_id: {
+  event: {
     type: DataTypes.INTEGER,
   }
   ,

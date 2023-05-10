@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS stellarUser;
 DROP TABLE IF EXISTS stellarEvent;
+DROP TABLE IF EXISTS stellarUser;
 DROP TABLE IF EXISTS stellarUserEvent;
 
 CREATE TABLE stellarUser (
@@ -31,3 +31,8 @@ CREATE TABLE stellarUserEvent (
 
 INSERT INTO stellarUser (username, password, name, zipcode, email)
 VALUES ('testuser', 'testpassword', 'Test User', '12345', 'testuser@example.com');
+
+INSERT INTO stellarUserEvent(id,event)
+VALUES (0,0);
+
+ALTER TABLE stellarUserEvent DROP PRIMARY KEY;

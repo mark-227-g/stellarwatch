@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { stellarUser}  = require('../models');
 const { stellarEvent}  = require('../models');
 const {stellarUserEvent}  = require('../models');
 
@@ -27,9 +28,9 @@ router.post('/event/addevent', async(req,res) =>
     console.log(stellarUserId+" : "+stellarEventId);
     console.log(req.body);
     try {
-      const [user_id, event_id,created_at,updated_at]= await stellarUserEvent.findOrCreate({
-        where: {user_id:stellarUserId,
-                event_id:stellarEventId ,
+      const [id, event,created_at,updated_at]= await stellarUserEvent.findOrCreate({
+        where: {id:stellarUserId,
+                event:stellarEventId ,
                 created_at:newdate,
               updated_at:newdate 
             },
