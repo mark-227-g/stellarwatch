@@ -45,7 +45,9 @@ background-color:grey;
 }
 
 #stellarEventList{
-  height:500px;
+  height:400px;
+  font-size:large;
+  width:100%;
 }
 #detailPhoto{
   width:100%;
@@ -53,9 +55,11 @@ background-color:grey;
 }
 #detailInfo{
 margin:0px;
+font:large;
 }
 
 #detailArea{
 border:2px solid black;
 padding:0px;
+height:400px;
 }
