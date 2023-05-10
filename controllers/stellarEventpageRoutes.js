@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { stellarEvent}  = require('../models');
-const {stellarUserEvent}  = require('../models');
+const { stellarEvent, SavedEvent, stellarUserEvent } = require('../models');
+
 
 router.get('/event', async (req, res) => {
   try {
@@ -46,7 +46,25 @@ router.post('/event/addevent', async(req,res) =>
   }
 });
 
-
+router.post('/event/save', async (req, res) => {
+  const { user_id, event_id } = req.body;
+  console.log('user_id:', user_id);
+  console.log('event_id:', event_id);
+  const newDate = new Date();
+  try {
+    const savedEvent = await SavedEvent.create({
+      user_id,
+      event_id,
+      created_at: newDate,
+      updated_at: newDate,
+    });
+    console.log('savedEvent:', savedEvent);
+    res.json(savedEvent);
+  } catch (err) {
+    console.log('Error saving event:', err);
+    res.status(500).json('500 error ' + err);
+  }
+});
 
 
 module.exports = router;

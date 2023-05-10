@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const SavedEvent = require('./stellarSavedEvent');
 
-class stellarEvent extends Model {}
+class StellarEvent extends Model {}
 
-stellarEvent.init(
+StellarEvent.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -36,8 +37,12 @@ stellarEvent.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'stellarEvent',
+    modelName: 'StellarEvent',
   }
 );
 
-module.exports = stellarEvent;
+StellarEvent.hasMany(SavedEvent, {
+  foreignKey: 'event_id',
+});
+
+module.exports = StellarEvent;
