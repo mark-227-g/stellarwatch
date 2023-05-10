@@ -31,7 +31,11 @@ width:auto;
 #eventDateInput{
   width:auto;
   }
-
+#searchForm{
+  width:100%;
+  height: 10px;
+  visibility: hidden;
+}
 #searchEventButton {
 background-color: lightgray;
 text-align: center;
@@ -48,7 +52,7 @@ background-color:grey;
   height:200px;
 }
 #detailInfo{
-margin:3px;
+margin:0px;
 }
 
 #detailArea{

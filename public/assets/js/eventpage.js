@@ -15,17 +15,13 @@ function addEventHandlers()
 
   let calendarButtonE1s=document.querySelectorAll(".calendarButton");
   calendarButtonE1s.forEach(element => {
-    element.addEventListener("click",saveButtonClick);
+    element.addEventListener("click",calendarButtonClick);
   });
   let viewButtonE1s=document.querySelectorAll(".viewButton");
   viewButtonE1s.forEach(element => {
     element.addEventListener("click",viewButtonClick);
   });
 }
-
-function addEventToUser(id) {
-alert('add event to user'+id);
-};
 
 /************************************** 
 Event handler for viewButtonClick
@@ -59,21 +55,20 @@ function viewButtonClick(event) {
 Event handler for saveButtonClick
 **************************************/
 function saveButtonClick(event) {
-  alert("save "+event.currentTarget.value);
-  console.log(event.currentTarget);
+
   addUserEvent(currentUserId,event.currentTarget.value)
 }
 /************************************** 
 Event handler for calendarButtonClick
 **************************************/
 function calendarButtonClick(event) {
-  alert("calendar " +event.currentTarget.value);
+  alert("event " +event.currentTarget.value+" has been added to your calendar");
   console.log(event.currentTarget);
 }
 
 function addUserEvent(stellarUserId,stellarEventId) {
   
-  fetch('home/addevent',{
+  fetch('event/addevent',{
     method:'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({stellarUserId,stellarEventId})

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { stellarUser}  = require('../models');
 const { stellarEvent}  = require('../models');
 const {stellarUserEvent}  = require('../models');
 
