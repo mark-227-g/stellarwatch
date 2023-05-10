@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My Saved stellarEvents</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>My Saved stellarEvents</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="#">Eventpage</a></li>
+			<li><a href="#">Saved Events</a></li>
+			<li><a href="#">Local Events</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		{{#each savedevents}}
+			<h2>{{title}}</h2>
+			<p>{{content}}</p>
+		{{/each}}
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>

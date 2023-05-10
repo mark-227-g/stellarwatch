@@ -10,12 +10,20 @@
 .list-group-item:hover{
   background-color: lightblue;
 }
-.img-thumbnail{
-  width:200px;
-  height:200px;
+
+.list-group {
+  color:purple;
 }
 
+#stellarEventPhoto{
+  visibility: hidden;
+  display: none;
+}
 
+#stellarEventInfo{
+  visibility: hidden;
+  display: none;
+}
 
 #zipcodeInput{
 width:auto;
@@ -24,12 +32,6 @@ width:auto;
   width:auto;
   }
 
-#searchCityBtn, #clearCityBtn {
-background-color:blue;
-color:white;
-width:100%
-
-}
 #searchEventButton {
 background-color: lightgray;
 text-align: center;
@@ -40,4 +42,16 @@ background-color:grey;
 
 #stellarEventList{
   height:500px;
+}
+#detailPhoto{
+  width:100%;
+  height:200px;
+}
+#detailInfo{
+margin:3px;
+}
+
+#detailArea{
+border:2px solid black;
+padding:0px;
 }
