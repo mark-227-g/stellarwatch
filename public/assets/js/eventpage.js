@@ -30,9 +30,30 @@ alert('add event to user'+id);
 /************************************** 
 Event handler for viewButtonClick
 **************************************/
+function displayDetailArea(row) {
+  
+  /*************************************
+  find photo in eventlist and update detail photo
+  **************************************/
+  let photoListE1s=document.querySelectorAll("#stellarEventPhoto");
+  let photoURL=photoListE1s[row].innerHTML;
+  let detailPhotoEl = document.querySelector("#detailPhoto")
+  detailPhotoEl.setAttribute("src",photoURL);  
+  
+  /*************************************
+  find info in eventlist and update detail info
+  **************************************/
+  let infolistEls=document.querySelectorAll("#stellarEventInfo");
+  let info=infolistEls[row].innerHTML
+  let detailInfoEl = document.querySelector("#detailInfo")
+  detailInfoEl.innerHTML=info;//setAttribute("src",photo);  
+}
+
+/************************************** 
+Event handler for viewButtonClick
+**************************************/
 function viewButtonClick(event) {
-  alert("view "+event.currentTarget.value);
-  console.log(event.currentTarget);
+  displayDetailArea(event.currentTarget.value - 1); 
 }
 /************************************** 
 Event handler for saveButtonClick
@@ -66,7 +87,11 @@ function addUserEvent(stellarUserId,stellarEventId) {
   )
 }
   
-  
+function main(){
+  addEventHandlers();
+  displayDetailArea(0); 
+};
+
+main();  
 
 
-addEventHandlers();
