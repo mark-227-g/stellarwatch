@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { stellarEvent}  = require('../models');
+const {stellarEvent}  = require('../models');
 const {stellarUserEvent}  = require('../models');
 
 router.get('/event', async (req, res) => {

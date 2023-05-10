@@ -4,24 +4,33 @@ const sequelize = require('../config/connection');
 class stellarUserEvent extends Model {}
 
   stellarUserEvent.init(
-  {
-  user_id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true
-  },
-  event_id: {
-    type: DataTypes.INTEGER,
-  }
-  ,
-  created_at: {
-    type: DataTypes.DATE,
-    allowNull: true,
-  },
-  updated_at: {
-    type: DataTypes.DATE,
-    allowNull: true,
-  },
-  
+    {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    datetime: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    info: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    photo: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }
   },
   {
     sequelize,
