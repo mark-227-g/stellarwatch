@@ -1,31 +1,52 @@
 const router = require('express').Router();
-const { stellarUserEvent, stellarEvent } = require('../models');
-
-router.get('/', (req, res) => {
-  res.render('savedevents');
-});
+const { SavedEvent, StellarEvent } = require('../models');
 
 router.get('/savedevents', async (req, res) => {
   try {
     // Get saved events for the current user and include the associated event data
-    const savedEventData = await stellarUserEvent.findAll({
-      where: { user_id: currentUserId },
-      include: [stellarEvent],
+    const savedEventData = await SavedEvent.findAll({
+      where: { user_id: req.session.currentUserId },
+      include: [{ model: StellarEvent, as: 'stellarEvent' }],
       order: [['created_at', 'DESC']],
     });
-
-    console.log(savedEventData);
 
     // Serialize saved event data so templates can read it
     const savedEvents = savedEventData.map((event) => event.get({ plain: true }));
 
-    console.log(savedEvents);
+    console.log('savedEvents:', savedEvents);
+
+    const stellarEvents = savedEvents.map((event) => event.stellarEvent);
+
+    console.log('stellarEvents:', stellarEvents);
 
     // Pass serialized data into Handlebars.js template
-    res.render('savedevents', { savedEvents });
+    res.render('savedevents', { savedEvents, stellarEvents });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    console.error('Error:', err);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+router.post('/savedevents', async (req, res) => {
+  try {
+    const eventData = await SavedEvent.create({
+      user_id: req.session.currentUserId,
+      event_id: req.body.event_id,
+      name: req.body.name,
+      description: req.body.description,
+      date: req.body.date,
+      start_time: req.body.start_time,
+      end_time: req.body.end_time,
+      location: req.body.location,
+    });
+
+    console.log('eventData:', eventData); // add this line
+
+    res.status(200).json(eventData);
+  } catch (err) {
+    console.log('Error in /savedevents route:', err); // add this line
+    res.status(400).json(err);
   }
 });
 

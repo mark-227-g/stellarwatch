@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { stellarEvent, SavedEvent, stellarUserEvent } = require('../models');
+const { StellarEvent, SavedEvent, StellarUserEvent } = require('../models');
 
 
 router.get('/event', async (req, res) => {
   try {
     // Get all events sorted by id
-    const stellarEventData = await stellarEvent.findAll({
+    const stellarEventData = await StellarEvent.findAll({
       order: [['id', 'ASC']],
     });
 
@@ -27,7 +27,7 @@ router.post('/event/addevent', async(req,res) =>
     console.log(stellarUserId+" : "+stellarEventId);
     console.log(req.body);
     try {
-      const [id, event,created_at,updated_at]= await stellarUserEvent.findOrCreate({
+      const [id, event,created_at,updated_at]= await StellarUserEvent.findOrCreate({
         where: {id:stellarUserId,
                 event:stellarEventId ,
                 created_at:newdate,
@@ -65,6 +65,5 @@ router.post('/event/save', async (req, res) => {
     res.status(500).json('500 error ' + err);
   }
 });
-
 
 module.exports = router;

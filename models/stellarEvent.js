@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const SavedEvent = require('./stellarSavedEvent');
 
 class StellarEvent extends Model {}
 
@@ -16,22 +15,23 @@ StellarEvent.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    datetime: {
+    eventdatetime: {
       type: DataTypes.DATE,
       allowNull: true,
+      field: 'eventdatetime',
     },
     info: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     photo: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     location: {
       type: DataTypes.STRING,
       allowNull: true,
-    }
+    },
   },
   {
     sequelize,
@@ -40,9 +40,5 @@ StellarEvent.init(
     modelName: 'StellarEvent',
   }
 );
-
-StellarEvent.hasMany(SavedEvent, {
-  foreignKey: 'event_id',
-});
 
 module.exports = StellarEvent;

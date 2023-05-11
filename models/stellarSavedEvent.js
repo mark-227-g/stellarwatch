@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const StellarEvent = require('./stellarEvent');
 
 class SavedEvent extends Model {}
 
@@ -22,7 +23,7 @@ SavedEvent.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'stellarEvent',
+        model: 'StellarEvent',
         key: 'id',
       },
       onDelete: 'CASCADE',
@@ -44,7 +45,13 @@ SavedEvent.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'savedEvents',
+    tableName: 'savedEvents', // Update the table name to match the actual table name
   }
 );
+
+SavedEvent.belongsTo(StellarEvent, {
+  foreignKey: 'event_id',
+  as: 'stellarEvent',
+});
 
 module.exports = SavedEvent;
