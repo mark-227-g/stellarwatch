@@ -55,8 +55,27 @@ function viewButtonClick(event) {
 Event handler for saveButtonClick
 **************************************/
 function saveButtonClick(event) {
+  const eventId = event.currentTarget.value;
+  console.log('currentUserId:', currentUserId);
+  console.log('eventId:', eventId);
+  addUserEvent(currentUserId, eventId);
+}
 
-  addUserEvent(currentUserId,event.currentTarget.value)
+function addUserEvent(userId, eventId) {
+  fetch('/event/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ user_id: userId, event_id: eventId }),
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log('Event saved:', data);
+    })
+    .catch(function (error) {
+      console.error('Error saving event:', error);
+    });
 }
 
 /************************************** 
@@ -66,22 +85,6 @@ function calendarButtonClick(event) {
   alert("event " +event.currentTarget.value+" has been added to your calendar");
   console.log(event.currentTarget);
 }
-
-function addUserEvent(stellarUserId,stellarEventId) {
-  
-  fetch('home/addevent',{
-    method:'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({stellarUserId,stellarEventId})
-  })
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(data){
-      return data;
-    }
-  )
-}
   
 function main(){
   addEventHandlers();
@@ -89,5 +92,3 @@ function main(){
 };
 
 main();  
-
-

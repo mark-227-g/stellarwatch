@@ -24,7 +24,7 @@
       <!--  loop through savedEvents and create list time.
             The list item has buttons for view, remove, ical
       -->
-      {{#each savedEvents as |savedEvent|}}
+     {{#each savedEvents as |savedEvent|}}
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <span class="stellarEvent" width="100%">{{savedEvent.stellarEvent.description}}</span>
     <span class="stellarEvent" width="100%" id="stellarEventPhoto">{{savedEvent.stellarEvent.photo}}</span>
