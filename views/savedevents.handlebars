@@ -1,8 +1,49 @@
-<main>
-{{#each savedevents}}
-  <div class="event">
-    <h2>{{this.stellarevent}}</h2>
-    <p>{{this.description}}</p>
+<div class="row">
+  <div class="row">
+  <div class="row">
+  <div class="col-1">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/event">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/savedevents">Saved Events</a>
+      </li>
+    </ul>
   </div>
+  <div class="row">
+    <form id="searchForm" class="container-fluid">
+      <input id="zipcodeInput"  type="text" placeholder="zipcode" /> 
+      <input id="eventDateInput" type="text" placeholder="mm/dd/yyyy" />
+      <button id="searchEventButton" type="submit" >Search</button>
+    </form>
+  </div>
+  <div class="row">
+   <div  class="list-group overflow-auto col-sm-7 col-md-7 col-lg-7">
+      <ul id="stellarEventList" class="list-group">
+      <!--  loop through savedEvents and create list time.
+            The list item has buttons for view, remove, ical
+      -->
+      {{#each savedEvents as |savedEvent|}}
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <span class="stellarEvent" width="100%">{{savedEvent.stellarEvent.description}}</span>
+    <span class="stellarEvent" width="100%" id="stellarEventPhoto">{{savedEvent.stellarEvent.photo}}</span>
+    <span class="stellarEvent" width="100%" id="stellarEventInfo">{{savedEvent.stellarEvent.info}}</span>
+    <span class="float-right">
+      <button class="viewButton" value="{{savedEvent.id}}"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="removeButton" value="{{savedEvent.id}}"><i class="fa-solid fa-trash"></i></button>
+      <button class="calendarButton" value="{{savedEvent.id}}"><i class="fa-solid fa-calendar-plus"></i></button>
+    </span>
+  </li>
 {{/each}}
-</main>
+      </ul>
+    </div>
+    <!--  show thumbnail image of event and description -->
+    <div class="col-sm-5 col-md-5 col-lg-5">
+      <div id="detailArea">
+        <p><img class="" id="detailPhoto" src="" alt="space image"></p>
+        <p id="detailInfo"></p>
+      </div>
+    </div>
+  </div>
+</div>

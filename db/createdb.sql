@@ -15,18 +15,27 @@ CREATE TABLE stellarEvent (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   user_id INTEGER,
   description VARCHAR(50),
-  datetime datetime,
+  eventdatetime datetime,
   info VARCHAR(50) NOT NULL,
   photo VARCHAR(50) NOT NULL,
   location VARCHAR(50) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES stellarUser(id)
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE stellarUserEvent (
   id INTEGER,
   event INTEGER 
+);
+
+CREATE TABLE savedEvents (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  user_id INTEGER NOT NULL,
+  event_id INTEGER NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES stellarUser(id),
+  FOREIGN KEY (event_id) REFERENCES stellarEvent(id)
 );
 
 INSERT INTO stellarUser (username, password, name, zipcode, email)

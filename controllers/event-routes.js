@@ -1,40 +1,32 @@
 const router = require('express').Router();
-
-const savedevents = [
-      {
-        stellarevent: 'Test event 1',
-        description: 'Description 1',
-      },
-      {
-        stellarevent: 'Test event 2',
-        description: 'Description 2',
-      },
-      {
-        stellarevent: 'Test event 3',
-        description: 'Description 3',
-      },
-      {
-        stellarevent: 'Test event 4',
-        description: 'Description 4',
-      },
-      {
-        stellarevent: 'Test event 5',
-        description: 'Description 5',
-      },
-      {
-        stellarevent: 'Test event 6',
-        description: 'Description 6',
-      },
-      {
-        stellarevent: 'Test event 7',
-        description: 'Description 7',
-      },
-    ];
+const { stellarUserEvent, stellarEvent } = require('../models');
 
 router.get('/', (req, res) => {
- res.render('savedevents', { savedevents: savedevents });
+  res.render('savedevents');
 });
-    
 
+router.get('/savedevents', async (req, res) => {
+  try {
+    // Get saved events for the current user and include the associated event data
+    const savedEventData = await stellarUserEvent.findAll({
+      where: { user_id: currentUserId },
+      include: [stellarEvent],
+      order: [['created_at', 'DESC']],
+    });
+
+    console.log(savedEventData);
+
+    // Serialize saved event data so templates can read it
+    const savedEvents = savedEventData.map((event) => event.get({ plain: true }));
+
+    console.log(savedEvents);
+
+    // Pass serialized data into Handlebars.js template
+    res.render('savedevents', { savedEvents });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

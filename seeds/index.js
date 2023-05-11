@@ -1,27 +1,28 @@
 const sequelize = require('../config/connection');
-const stellarUser = require('../models/stellarUser');
 const stellarEvent = require('../models/stellarEvent');
-const stellarUserEvent = require('../models/stellarUserEvent');
-const stellarUserData = require('./stellarUser-seeds.json');
 const stellarEventData = require('./stellarEvent-seeds.json');
-const stellarUserEventData = require('./stellarUserEvent-seeds.json');
+
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  try {
+    // Disable foreign key checks temporarily
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 0');
 
-  await stellarUser.bulkCreate(stellarUserData, {
-    individualHooks: true,
-    returning: true,
-  });
-  await stellarEvent.bulkCreate(stellarEventData, {
-    individualHooks: true,
-    returning: true,
-  });
-  await stellarUserEvent.bulkCreate(stellarUserEventData, {
-    individualHooks: true,
-    returning: true,
-  });
+    await sequelize.sync({ force: true });
 
-  process.exit(0);
+    // Seed the stellarEvent table
+    await stellarEvent.bulkCreate(stellarEventData, {
+      individualHooks: true,
+      returning: true,
+    });
+
+    // Re-enable foreign key checks
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 1');
+
+    process.exit(0);
+  } catch (err) {
+    console.error('Error seeding database:', err);
+    process.exit(1);
+  }
 };
 
 seedDatabase();

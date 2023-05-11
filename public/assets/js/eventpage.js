@@ -58,6 +58,7 @@ function saveButtonClick(event) {
 
   addUserEvent(currentUserId,event.currentTarget.value)
 }
+
 /************************************** 
 Event handler for calendarButtonClick
 **************************************/
@@ -68,7 +69,7 @@ function calendarButtonClick(event) {
 
 function addUserEvent(stellarUserId,stellarEventId) {
   
-  fetch('event/addevent',{
+  fetch('home/addevent',{
     method:'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({stellarUserId,stellarEventId})
