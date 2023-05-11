@@ -27,7 +27,6 @@ router.get('/savedevents', async (req, res) => {
   }
 });
 
-
 router.post('/savedevents', async (req, res) => {
   try {
     const eventData = await SavedEvent.create({
@@ -47,6 +46,20 @@ router.post('/savedevents', async (req, res) => {
   } catch (err) {
     console.log('Error in /savedevents route:', err); // add this line
     res.status(400).json(err);
+  }
+});
+
+router.delete('/savedevents/:eventId', async (req, res) => {
+  try {
+    const eventId = req.params.eventId;
+
+    // Logic to delete the saved event from the database
+    await SavedEvent.destroy({ where: { id: eventId } });
+
+    res.sendStatus(204); // Send a 204 No Content response indicating successful deletion
+  } catch (err) {
+    console.error('Failed to delete the saved event:', err);
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
