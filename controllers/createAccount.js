@@ -30,31 +30,22 @@ router.post('/', (req, res) => {
           res.send('<script>alert("Email already registered"); window.location="/create-account";</script>'); // show a browser alert and redirect to the create account page
         }
       } else {
-        // Hash the password
-        bcrypt.hash(password, 10, (err, hashedPassword) => {
-          if (err) {
-            console.error(err);
-            res.status(500).json({ message: 'Internal server error' });
-            return;
-          }
-
-          // Create new user in the database with the hashed password
-          console.log('Before stellarUser.create');
-          stellarUser.create({ username, email, password: hashedPassword, zipcode, name })
-            .then(() => {
-              console.log('User created');
-              res.redirect('/login'); // redirect to the login page
-            })
-            .catch(error => {
-              if (error.errors && error.errors[0].type === 'Validation error' && error.errors[0].path === 'email') {
-                console.log('Invalid email');
-                res.send('<script>alert("Invalid email"); window.location="/create-account";</script>'); // show a browser alert and redirect to the create account page
-              } else {
-                console.error(error);
-                res.status(500).json({ message: 'Internal server error' });
-              }
-            });
-        });
+        // Create new user in the database
+        console.log('Before stellarUser.create');
+        stellarUser.create({ username, email, password, zipcode, name })
+        .then((createdUser) => {
+          console.log(`User created with ID: ${createdUser.id} and password: ${createdUser.password}`);
+            res.redirect('/login'); // redirect to the login page
+          })
+          .catch(error => {
+            if (error.errors && error.errors[0].type === 'Validation error' && error.errors[0].path === 'email') {
+              console.log('Invalid email');
+              res.send('<script>alert("Invalid email"); window.location="/create-account";</script>'); // show a browser alert and redirect to the create account page
+            } else {
+              console.error(error);
+              res.status(500).json({ message: 'Internal server error' });
+            }
+          });
       }
     })
     .catch(error => {

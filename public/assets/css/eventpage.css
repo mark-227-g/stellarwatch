@@ -121,16 +121,23 @@ button:hover {
 .custom-navbar {
   background-color: #1f1e1e;
   color: #fff;
-  padding: 10px;
   font-family: 'Orbitron', sans-serif;
-  margin-top: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  padding: 10px 0;
 }
 
 
 .custom-navbar-nav {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
+  align-items: center; 
   list-style-type: none; 
+  height: 100%; 
+  padding: 10px 0;
 }
 
 .custom-nav-item {
@@ -142,8 +149,13 @@ button:hover {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: #333;
+  border-radius: 5px;
+  margin: 0 5px; 
 }
 
 .custom-nav-link:hover {
   color: #007bff;
+  background-color: #222; 
 }
