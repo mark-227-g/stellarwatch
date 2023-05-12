@@ -21,6 +21,8 @@ router.post('/', (req, res) => {
               req.session.user = user;
               req.session.currentUserId = user.id; // Set the currentUserId in the session
 
+              console.log('currentUserId:', req.session.currentUserId); // Log the currentUserId
+
               // Redirect to the dashboard page
               res.redirect('/event');
             } else {

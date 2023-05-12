@@ -5,17 +5,19 @@ global variables
 function addEventHandlers() {
   let viewButtonEls = document.querySelectorAll(".viewButton");
   viewButtonEls.forEach((element) => {
-    element.addEventListener("click", function() {
+    element.addEventListener("click", function () {
       viewButtonClick(element);
     });
-  let calendarButtonE1s=document.querySelectorAll(".calendarButton");
-  calendarButtonE1s.forEach(element => {
-    element.addEventListener("click",calendarButtonClick);
+  }); // Add a closing parenthesis here
+
+  let calendarButtonE1s = document.querySelectorAll(".calendarButton");
+  calendarButtonE1s.forEach((element) => {
+    element.addEventListener("click", calendarButtonClick);
   });
-  });
+
   let removeButtonEls = document.querySelectorAll(".removeButton");
   removeButtonEls.forEach((element) => {
-    element.addEventListener("click", function() {
+    element.addEventListener("click", function () {
       removeButtonClick(element);
     });
   });
