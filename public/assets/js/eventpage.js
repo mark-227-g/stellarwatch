@@ -1,10 +1,6 @@
 /************************************** 
 global variables
 **************************************/
-var savedstellarEvent = 1;
-var currentUserId = 1;
-
-
 
 function addEventHandlers()
 {

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 class stellarUser extends Model {}
 
@@ -43,7 +44,7 @@ stellarUser.init({
     allowNull: false,
     validate: {
       notNull: true,
-      len: [8, 50]
+      len: [8, 60]
     }
   }
 }, {
@@ -51,6 +52,11 @@ stellarUser.init({
   modelName: 'stellarUser',
   freezeTableName: true,
   timestamps: false
+});
+
+stellarUser.beforeCreate(async (user) => {
+  const hashedPassword = await bcrypt.hash(user.password, 10);
+  user.password = hashedPassword;
 });
 
 module.exports = stellarUser;
