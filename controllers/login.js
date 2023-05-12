@@ -13,38 +13,32 @@ router.post('/', (req, res) => {
   stellarUser.findOne({ where: { username } })
     .then(user => {
       if (user) {
+        console.log(`Found user with ID: ${user.id} and hashed password: ${user.password}`);
         // Compare the password using bcrypt
         bcrypt.compare(password, user.password)
           .then(match => {
+            console.log(`Passwords match: ${match}`);
             if (match) {
-              // Set the user object in the session
+              // Passwords match
               req.session.user = user;
-              req.session.currentUserId = user.id; // Set the currentUserId in the session
-
-              console.log('currentUserId:', req.session.currentUserId); // Log the currentUserId
-
-              // Redirect to the dashboard page
+              req.session.currentUserId = user.id;
               res.redirect('/event');
             } else {
-              // Return an error message if authentication fails
-              res.send('<script>alert("Invalid username or password"); window.location="/login";</script>'); // show a browser alert and redirect to the login page
+              // Passwords don't match
+              res.send('<script>alert("Invalid username or password"); window.location="/login";</script>');
             }
           })
           .catch(error => {
             console.error('Error:', error);
-
-            // Return an error message if there's a server error
             res.status(500).json({ message: 'Internal server error' });
           });
       } else {
-        // Return an error message if authentication fails
-        res.send('<script>alert("Invalid username or password"); window.location="/login";</script>'); // show a browser alert and redirect to the login page
+        // User not found
+        res.send('<script>alert("User not found"); window.location="/login";</script>');
       }
     })
     .catch(error => {
       console.error('Error:', error);
-
-      // Return an error message if there's a server error
       res.status(500).json({ message: 'Internal server error' });
     });
 });
