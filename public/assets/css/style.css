@@ -103,7 +103,7 @@ body {
   
   .nasa-image img {
     max-width: 100%;
-    height: auto;
+    max-height: 500px;
     width: auto\9;
     max-width: 90%; /* Adjust this value to make the image bigger or smaller */
     display: block;
