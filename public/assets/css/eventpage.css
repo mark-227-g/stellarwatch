@@ -4,15 +4,40 @@
   color:white;
 }
 
-.list-group-item{
-  padding:0;
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Add this property to allow items to wrap when necessary */
 }
+
+.list-group-item span.float-right {
+  display: flex;
+  align-items: center;
+}
+
+.list-group-item .viewButton,
+.list-group-item .saveButton,
+.list-group-item .calendarButton {
+  min-width: 40px; 
+  margin-right: 10px; 
+  font-size: 16px;
+  flex-shrink: 0; 
+}
+
 .list-group-item:hover{
   background-color: lightblue;
 }
 
+.list-group-item .stellarEvent {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 150px);
+}
+
 .list-group {
-  color:purple;
+  margin-top: 25px;
 }
 
 #stellarEventPhoto{
@@ -40,28 +65,35 @@ width:auto;
 background-color: lightgray;
 text-align: center;
 }
+
 #searchEventButton:hover {
 background-color:grey;
 }
 
 #stellarEventList{
-  height:400px;
+  margin-top: 25px;
   font-size:large;
-  width:100%;
+  max-width:100%;
+  overflow: auto;
+  max-height: calc(100vh - 250px);
 }
+
 #detailPhoto{
   width:100%;
   height:200px;
 }
+
 #detailInfo{
-margin:0px;
-font:large;
+  margin: 10px auto;
+  text-align: center;
 }
 
 #detailArea{
-border:2px solid black;
-padding:0px;
+border: none;
+padding:10px;
 height:400px;
+margin-bottom: 10px;
+margin-top: 100px;
 }
 
 button {
@@ -76,4 +108,34 @@ button {
 
 button:hover {
   background-color: #0069d9;
+}
+
+.custom-navbar {
+  background-color: #1f1e1e;
+  color: #fff;
+  padding: 10px;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 20px;
+}
+
+
+.custom-navbar-nav {
+  display: flex;
+  justify-content: center;
+  list-style-type: none; 
+}
+
+.custom-nav-item {
+  margin-right: 10px;
+}
+
+.custom-nav-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.custom-nav-link:hover {
+  color: #007bff;
 }
