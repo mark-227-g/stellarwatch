@@ -2,10 +2,13 @@
 Default page styles
 **************************************/
 
-* {
+
+html,
+body {
+  height: 100%;
   margin: 0;
-  box-sizing: border-box;
-  }
+  padding: 0;
+}
 
   h1 {
   text-align: center;
@@ -30,7 +33,12 @@ Default page styles
   html {
     overflow-x: hidden;
   }
-  
+
+  main {
+    flex: 1;
+    padding-bottom: 50px;
+
+  }
   
   /**************************************
   Heading styles
@@ -101,8 +109,6 @@ Default page styles
     display: block;
     margin: 0 auto;
   }
-  
-  
   
   .nasa-title {
   font-size: 1rem;
@@ -216,6 +222,7 @@ Default page styles
     color: #fff;
     padding: 10px;
     text-align: center;
+    margin-top: auto;
   }
   
   .footerText {
