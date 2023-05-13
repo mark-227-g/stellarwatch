@@ -8,7 +8,7 @@ function addEventHandlers() {
     element.addEventListener("click", function () {
       viewButtonClick(element);
     });
-  }); // Add a closing parenthesis here
+  });
 
   let calendarButtonE1s = document.querySelectorAll(".calendarButton");
   calendarButtonE1s.forEach((element) => {
@@ -24,32 +24,26 @@ function addEventHandlers() {
 }
 
 function viewButtonClick(element) {
-  const row = element.value - 1;
-  displayDetailArea(row);
+  displayDetailArea(element);
 }
 
-function displayDetailArea(row) {
-  const savedEventEls = document.querySelectorAll(".stellarEvent");
-  const description = savedEventEls[row].textContent;
+function displayDetailArea(element) {
+  let listItem;
+
+  if (element.classList.contains('list-group-item')) {
+    listItem = element;
+  } else if (element.classList.contains('viewButton')) {
+    listItem = element.closest('.list-group-item');
+  } else {
+    return;
+  }
+
+  const description = listItem.querySelector(".stellarEvent").textContent;
+  const photoURL = listItem.querySelector(".stellarEventPhoto").textContent;
+  const info = listItem.querySelector(".stellarEventInfo").textContent;
+
   const detailPhotoEl = document.querySelector("#detailPhoto");
   const detailInfoEl = document.querySelector("#detailInfo");
-
-  const stellarEventPhotoEls = document.querySelectorAll(".stellarEventPhoto");
-  const stellarEventInfoEls = document.querySelectorAll(".stellarEventInfo");
-
-  let photoURL, info;
-
-  stellarEventPhotoEls.forEach((photoEl, index) => {
-    if (index === row) {
-      photoURL = photoEl.textContent;
-    }
-  });
-
-  stellarEventInfoEls.forEach((infoEl, index) => {
-    if (index === row) {
-      info = infoEl.textContent;
-    }
-  });
 
   if (photoURL) {
     detailPhotoEl.setAttribute("src", photoURL);
@@ -60,9 +54,12 @@ function displayDetailArea(row) {
   detailInfoEl.textContent = info;
 }
 
-function main() {
+function main(){
   addEventHandlers();
-  displayDetailArea(0);
+  const savedEvents = document.querySelectorAll('.list-group-item');
+  if (savedEvents.length > 0) {
+    displayDetailArea(savedEvents[0]);
+  }
 }
 
 /************************************** 
@@ -72,11 +69,6 @@ function calendarButtonClick(event) {
   alert("event " +event.currentTarget.value+" has been added to your calendar");
   console.log(event.currentTarget);
 }
-  
-function main(){
-  addEventHandlers();
-  displayDetailArea(0); 
-};
 
 // event handler for removeButtonClick
 
