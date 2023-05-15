@@ -87,4 +87,6 @@ function main(){
   displayDetailArea(0); 
 };
 
-main();  
+document.addEventListener("DOMContentLoaded", function() {
+  main();
+});

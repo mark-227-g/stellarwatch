@@ -92,4 +92,6 @@ function removeButtonClick(element) {
   });
 }
 
-main();
+document.addEventListener("DOMContentLoaded", function() {
+  main();
+});

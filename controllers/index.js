@@ -16,4 +16,8 @@ router.use('/login', loginRoutes);
 router.use(savedEventsRoutes);
 router.use('/', stellarEventpageRoutes);
 
+router.get('/', (req, res) => {
+    res.redirect('/login');
+  });
+
 module.exports = router;
